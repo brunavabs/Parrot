@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/imagens/logo.png'
 import * as S from './styled';
-import { Container, Button, Form } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 import { Link } from 'react-router-dom';
 
 function Login(){
