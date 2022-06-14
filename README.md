@@ -8,6 +8,7 @@ comunidade.
 O desafio será desenvolvido por times de 3-4 pessoas, incluindo front-end e back-end.
 Lembre-se que comunicação é tudo em um projeto, estejam sempre alinhados sobre as
 demandas e prazos.
+
 FRONT-END
 Os desenvolvedores do front-end serão responsáveis por criar as páginas com base no
 layout utilizando Bootstrap, Styled-components, React e Redux.
@@ -23,20 +24,24 @@ a. Dados: Nome, email, senha, unidade/apartamento
 É muito importante que vocês mantenham a comunicação com os devs do back-end
 para garantir que vão receber as informações necessárias para tornar as páginas
 dinâmicas e funcionais.
+
 BACK-END
 Os desenvolvedores do back-end serão responsáveis por construir a API utilizando
 Node.js, Express, Jest, Sequelize, MySQL e Arquitetura Limpa.
 1. Criação de banco de dados com base no DER (vide última página)
+
 a. via migrations
 b. utilizar seeders para popular o banco caso necessário
 2. API Rest com CRUD para usuários e publicações
 3. Autenticação de usuário
 4. Implementar Princípios SOLID na arquitetura
 5. Testes automatizados (unitários e integração), cobrir ao menos:
+
 a. controllers
 b. endpoint (casos de erro também)
 Garanta que a API está de acordo com os dados esperados na aplicação front-end.
 Modelagem de dados:
+
 FUNCIONALIDADES OBRIGATÓRIAS
 1. Cadastro e autenticação do usuário
 2. Autenticação do administrador
@@ -44,10 +49,12 @@ FUNCIONALIDADES OBRIGATÓRIAS
 4. Criar Post
 5. Listar posts (Feed)
 6. Edição do Usuário
+
 FUNCIONALIDADE OPCIONAL
 1. Like
 2. Comentário em um post
 3. Utilização de Loading e Página de erros.
+
 CRITÉRIOS DE AVALIAÇÃO
 - Responsividade da aplicação
 - Validação dos dados de response da API (retorno)
