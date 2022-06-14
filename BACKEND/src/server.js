@@ -1,3 +1,5 @@
 import app from "./app.js";
 
-app.listen(3333, () => console.log('Server on! Amem?'))
+const port = process.env.SERVER_PORT
+
+app.listen(port, () => console.log(`Server on! Amem? AMEM!!! Porta => ${port} `))
