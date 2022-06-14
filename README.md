@@ -13,34 +13,34 @@ FRONT-END
 Os desenvolvedores do front-end serão responsáveis por criar as páginas com base no
 layout utilizando Bootstrap, Styled-components, React e Redux.
 1. Login
-
 a. Dados: email e senha
 
 2. Cadastro do Usuário
-
 a. Dados: Nome, email, senha, unidade/apartamento
 
 3. Feed (criar post, listas todos os posts)
+
 4. Página do usuario (posts do usuário)
-É muito importante que vocês mantenham a comunicação com os devs do back-end
-para garantir que vão receber as informações necessárias para tornar as páginas
-dinâmicas e funcionais.
 
 BACK-END
 Os desenvolvedores do back-end serão responsáveis por construir a API utilizando
 Node.js, Express, Jest, Sequelize, MySQL e Arquitetura Limpa.
-1. Criação de banco de dados com base no DER (vide última página)
 
+1. Criação de banco de dados com base no DER (vide última página)
 a. via migrations
 b. utilizar seeders para popular o banco caso necessário
-2. API Rest com CRUD para usuários e publicações
-3. Autenticação de usuário
-4. Implementar Princípios SOLID na arquitetura
-5. Testes automatizados (unitários e integração), cobrir ao menos:
 
+2. API Rest com CRUD para usuários e publicações
+
+3. Autenticação de usuário
+
+4. Implementar Princípios SOLID na arquitetura
+
+5. Testes automatizados (unitários e integração), cobrir ao menos:
 a. controllers
 b. endpoint (casos de erro também)
 Garanta que a API está de acordo com os dados esperados na aplicação front-end.
+
 Modelagem de dados:
 
 FUNCIONALIDADES OBRIGATÓRIAS
