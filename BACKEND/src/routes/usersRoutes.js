@@ -1,13 +1,9 @@
 import express from 'express';
 import { CreateUserController } from '../domain/users/userCase/create/CreateUserController.js';
+import UserValidation from '../domain/users/usersValidation/index.js';
 
 const routes = express.Router();
 
-routes.get('/users', (req, res) => {
-   res.status(200).json({msg:'teste rotas users'})
-})
-
-routes.post('/users', CreateUserController.createUser)
-
+routes.post('/users', UserValidation.create, CreateUserController.createUser)
 
 export default routes;

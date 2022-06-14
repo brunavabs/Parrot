@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import background from '../../assets/Imagens/background.png'
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export const Body = styled.body`
@@ -42,7 +43,7 @@ export const FormInput = styled.input`
   }
 `	
 
-export const LoginBtn = styled.button`
+export const LoginBtn = styled(Button)`
   width: 300px;
   border: none;
   border-radius: 5px;
