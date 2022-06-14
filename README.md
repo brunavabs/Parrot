@@ -41,8 +41,11 @@ b. utilizar seeders para popular o banco caso necessário
 4. Implementar Princípios SOLID na arquitetura
 
 5. Testes automatizados (unitários e integração), cobrir ao menos:
+
 a. controllers
+
 b. endpoint (casos de erro também)
+
 Garanta que a API está de acordo com os dados esperados na aplicação front-end.
 
 Modelagem de dados:
