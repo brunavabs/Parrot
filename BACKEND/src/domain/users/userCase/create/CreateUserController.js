@@ -6,7 +6,7 @@ export class CreateUserController {
       const novoUser = await CreateUserUseCase.registroUser(req.body);
       res.status(201).json(novoUser);
     } catch (error) {
-      res.status(500).json("Deu erro! Chame o Homem de Ferro");
+      res.status(500).send({message: `Deu erro! Chame o Homem de Ferro - ${error.message}`});
     }
   }
 }
