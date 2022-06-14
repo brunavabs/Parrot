@@ -1,5 +1,5 @@
 import express from 'express';
-import { CreateUserController } from '../domain/users/userCase/create/CreateUserController';
+import { CreateUserController } from '../domain/users/userCase/create/CreateUserController.js';
 
 const routes = express.Router();
 

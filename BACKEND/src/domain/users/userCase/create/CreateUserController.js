@@ -1,4 +1,4 @@
-import { CreateUserUseCase } from "./CreateUserUseCase";
+import { CreateUserUseCase } from "./CreateUserUseCase.js";
 
 export class CreateUserController {
   static async createUser(req, res) {

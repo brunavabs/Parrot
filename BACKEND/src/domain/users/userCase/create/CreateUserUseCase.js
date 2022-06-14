@@ -1,5 +1,5 @@
-import User from "../../../models/Users";
-import bcryp from "bcryptjs";
+import User from "../../../models/Users.js";
+import bcrypt from "bcrypt";
 
 export class CreateUserUseCase {
   static async registroUser(data) {
