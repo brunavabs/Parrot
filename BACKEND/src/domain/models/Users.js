@@ -14,6 +14,7 @@ const Users = db.define(
       },
       email: {
          type: DataTypes.STRING,
+         unique: true,
       },
       apartament: {
          type: DataTypes.INTEGER,
