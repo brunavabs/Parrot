@@ -1,7 +1,7 @@
-import getOne from "./getOne";
+import getOne from "./getOne.js";
 import create from "./create.js";
-import update from "./update";
-import destroy from "./destroy";
+import update from "./update.js";
+import destroy from "./destroy.js";
 
 const UserValidation = {
    getOne,
