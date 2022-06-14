@@ -1,8 +1,8 @@
 "use strict";
 
-export default {
+module.exports = {
   async up(queryInterface, Sequelize) {
-    queryInterface.addConstraint("posts", {
+    await queryInterface.addConstraint("posts", {
       fields: ["userID"],
       type: "foreign key",
       name: "post_user_id_fkey",
@@ -14,6 +14,6 @@ export default {
   },
 
   async down(queryInterface, Sequelize) {
-    queryInterface.removeConstraint("posts", "post_user_id_fkey");
+    await queryInterface.removeConstraint("posts", "post_user_id_fkey");
   },
 };
