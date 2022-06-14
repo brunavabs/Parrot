@@ -12,8 +12,11 @@ FRONT-END
 Os desenvolvedores do front-end serão responsáveis por criar as páginas com base no
 layout utilizando Bootstrap, Styled-components, React e Redux.
 1. Login
+
 a. Dados: email e senha
+
 2. Cadastro do Usuário
+
 a. Dados: Nome, email, senha, unidade/apartamento
 3. Feed (criar post, listas todos os posts)
 4. Página do usuario (posts do usuário)
