@@ -1,33 +1,34 @@
 import React from 'react';
 import logo from '../../assets/imagens/logo.png'
 import * as S from './styled';
-import {Container, Button, Form} from "react-bootstrap"
-
+import { Container, Button, Form } from "react-bootstrap"
+import { Link } from 'react-router-dom';
 
 function Login(){
     return(
         <S.Body>
             <S.Container>
-                <S.Logo src={logo}/>
-                <span>LOGIN</span>
+                <S.Logo src={logo} className='mb-3'/>
+                <span className='mb-3'>LOGIN</span>
                 <Form>
-                    <Form.Group className="mb-5">
-                        <Form.Control
+                    <Form.Group className="mb-3">
+                        <S.FormInput
                             id="email"
                             type="text"
-                            placeholder="email"
-                        />
+                            placeholder="email">
+                        </S.FormInput>
                     </Form.Group>
-                    <Form.Group className="mb-5">
-                        <Form.Control
+                    <Form.Group className="mb-3">
+                        <S.FormInput
                             id="senha"
                             type="password"
-                            placeholder="senha"
-                        />
+                            placeholder="senha">
+                        </S.FormInput>
                     </Form.Group>
-                    <Button variant="secondary" type="submit">
+                    <S.LoginBtn type="submit" className='mb-4'>
                         entrar
-                    </Button>
+                    </S.LoginBtn>
+                    <S.LoginCadastro>cadastre-se</S.LoginCadastro>
                 </Form>
             </S.Container>
         </S.Body>
