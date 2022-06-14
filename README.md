@@ -19,6 +19,7 @@ a. Dados: email e senha
 2. Cadastro do Usuário
 
 a. Dados: Nome, email, senha, unidade/apartamento
+
 3. Feed (criar post, listas todos os posts)
 4. Página do usuario (posts do usuário)
 É muito importante que vocês mantenham a comunicação com os devs do back-end
