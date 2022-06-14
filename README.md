@@ -31,6 +31,7 @@ Node.js, Express, Jest, Sequelize, MySQL e Arquitetura Limpa.
 1. Criação de banco de dados com base no DER (vide última página)
 
 a. via migrations
+
 b. utilizar seeders para popular o banco caso necessário
 
 2. API Rest com CRUD para usuários e publicações
