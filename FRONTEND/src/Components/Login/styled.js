@@ -72,6 +72,14 @@ export const LoginBtn = styled(Button)`
   }
 `
 
-export const LoginCadastro = styled.div`
+export const LoginCadastro = styled(Link)`
+  display: block;
   text-align: center;
+  color: #555555;
+  text-decoration: none;
+  font-size: 18px;
+  &:hover {
+    text-decoration: underline;
+    color: #555555;
+  }
 `

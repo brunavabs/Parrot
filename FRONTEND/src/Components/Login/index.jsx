@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../assets/imagens/logo.png'
 import * as S from './styled';
 import { Form } from "react-bootstrap"
-import { Link } from 'react-router-dom';
+
 
 function Login(){
     return(
@@ -28,7 +28,7 @@ function Login(){
                     <S.LoginBtn type="submit" className='mb-4'>
                         entrar
                     </S.LoginBtn>
-                    <S.LoginCadastro>cadastre-se</S.LoginCadastro>
+                    <S.LoginCadastro to="/signup">cadastre-se</S.LoginCadastro>
                 </Form>
             </S.Container>
         </S.Body>
