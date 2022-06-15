@@ -1,10 +1,10 @@
 import { FindAllUserUseCase } from "./findAllUserUseCase.js";
 
 export class FindAllUserController {
-  static async listarUsers(req, res) {
+  static async listarAll(req, res) {
     try {
-      const listarUser = await FindAllUserUseCase.listarUser();
-      res.status(200).json(listarUser);
+      const listarAll = await FindAllUserUseCase.listarAll();
+      res.status(200).json(listarAll);
     } catch (error) {
       console.log(error);
       res.status(500).send({ message: "Deu errado!" });
