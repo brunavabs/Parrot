@@ -8,13 +8,14 @@ import UserInfo from './Components/UserInfo'
 import FeedPessoal from './Components/FeedPessoal'
 import Publicacao from './Components/Publicacao'
 import ContainerPublicacao from './Components/ContainerPublicacao'
+import Publicar from './Components/Publicar'
 
 function App() {
 
   return (
     <div>
       <Header/>
-      <UserInfo/>
+      <Publicar/>
       <ContainerPublicacao>
         <Publicacao/>
       </ContainerPublicacao>
