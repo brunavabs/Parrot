@@ -7,6 +7,7 @@ import Header from './Components/Header'
 import UserInfo from './Components/UserInfo'
 import FeedPessoal from './Components/FeedPessoal'
 import Publicacao from './Components/Publicacao'
+import ContainerPublicacao from './Components/ContainerPublicacao'
 
 function App() {
 
@@ -14,7 +15,9 @@ function App() {
     <div>
       <Header/>
       <UserInfo/>
-      <Publicacao/>
+      <ContainerPublicacao>
+        <Publicacao/>
+      </ContainerPublicacao>
     </div>
   )
 }
