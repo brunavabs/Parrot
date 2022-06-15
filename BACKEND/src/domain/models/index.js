@@ -1,5 +1,5 @@
-import Users from "./Users";
-import Posts from "./Posts";
+import Users from "./Users.js";
+import Posts from "./Posts.js";
 
 Posts.belongsTo(Users, {
    foreignKey: "userID",
