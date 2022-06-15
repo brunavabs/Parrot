@@ -5,6 +5,7 @@ import Login from './Components/Login'
 import Cadastro from './Components/Cadastro'
 import Header from './Components/Header'
 import UserInfo from './Components/UserInfo'
+import FeedPessoal from './Components/FeedPessoal'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <div>
       <Header/>
       <UserInfo/>
+      <FeedPessoal/>
     </div>
   )
 }
