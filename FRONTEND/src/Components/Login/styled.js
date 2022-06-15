@@ -26,11 +26,20 @@ justify-content: center;
 flex-direction: column;
 align-items: center;
 padding: 70px;
+
+@media(max-width: 600px) {
+    padding: 30px;
+  }
 `
 
 export const Logo = styled.img`
 width: 170px;
 height: 180px;
+
+@media(max-width: 600px) {
+    width: 95px;
+    height: 100px;
+  }
 `
 
 export const FormInput = styled.input`
@@ -40,6 +49,10 @@ export const FormInput = styled.input`
   padding: 3px;
   ::placeholder {
     text-align: center;
+  }
+
+  @media(max-width: 600px) {
+    width: 250px;
   }
 `	
 
@@ -52,6 +65,10 @@ export const LoginBtn = styled(Button)`
   transition: .3s;
   &:hover {
     background-color: #4CAF50;
+  }
+
+  @media(max-width: 600px) {
+    width: 250px;
   }
 `
 
