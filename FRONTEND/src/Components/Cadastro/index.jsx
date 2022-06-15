@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/imagens/logo.png'
 import * as S from './styled';
-import { Form } from "react-bootstrap"
+import { Form, Button } from "react-bootstrap"
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { cadastroUsuario } from '../../services/auth';
@@ -10,9 +10,9 @@ const validationSchema = Yup.object({
     name: Yup.string().required("Valor é requerido"),
     email: Yup.string().email("E-mail não valido").required("Valor é requerido"),
     password: Yup.string().min(6, "Senha fraca. Digite uma senha com mais caracteres").required("Valor é requerido"),
-    passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Digite a mesma senha').required("Valor é requerido"),
+    //passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Digite a mesma senha').required("Valor é requerido"),
     apartament: Yup.string().required("Valor é requerido"),
-    linkImage: Yup.string()
+    //linkImage: Yup.string()
 });
 
 function Cadastro(){
@@ -21,15 +21,19 @@ function Cadastro(){
             name: '',
             email: '',
             password: '',
-            passwordConfirmation: '',
             apartament: '',
-            linkImage: ''
         },
         validationSchema,
         onSubmit: async values => {
-            const { name, email, password, apartament } = values;
-            await cadastroUsuario(name, email, password, apartament);
-            alert('Usuário cadastrado com sucesso!');
+            try {
+                const { name, email, password, apartament } = values;
+                await cadastroUsuario(values.name, values.email, values.password, values.apartament);
+                alert('Usuário cadastrado com sucesso!');
+                console.log(values)
+            } catch(error) {
+                alert(`Erro ao cadastrar usuário: ${error}`);
+            }
+            
         }
     })
     return(
@@ -60,7 +64,7 @@ function Cadastro(){
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <S.FormInput
-                            id="senha"
+                            id="password"
                             type="password"
                             placeholder="senha"
                             value={formik.values.password}
@@ -71,14 +75,14 @@ function Cadastro(){
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <S.FormInput
-                            id="confirmaSenha"
+                            id="passwordConfirmation"
                             type="password"
                             placeholder="confirmar senha">
                         </S.FormInput>
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <S.FormInput
-                            id="apartamento"
+                            id="apartament"
                             type="text"
                             placeholder="unidade/apartamento"
                             value={formik.values.apartament}
@@ -88,7 +92,7 @@ function Cadastro(){
                     </Form.Group>
                     <Form.Group className="mb-5">
                         <S.FormInput
-                            id="linkImagem"
+                            id="linkImage"
                             type="text"
                             placeholder="link da foto">
                         </S.FormInput>
