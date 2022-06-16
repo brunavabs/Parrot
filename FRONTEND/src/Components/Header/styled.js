@@ -30,7 +30,15 @@ export const HeaderGreetings = styled.span`
   color: #76BB4C;
 `
 
-export const HeaderSignOut = styled.a`
+export const HeaderGreetingsLink = styled(Link)`
+  text-decoration: none;
+  color: #76BB4C;
+  &:hover {
+    color: #6033AA;
+  }
+` 
+
+export const HeaderSignOut = styled(Link)`
   color: #6033AA;
   text-decoration: none;
   font-size: 16px;

@@ -16,39 +16,51 @@ export const Container = styled.div`
   max-width: 700px;
   margin: 0 auto;
   padding: 45px 100px 45px 30px;
+  @media screen and (max-width: 575px) {
+    padding: 45px 30px;
+    flex-direction: column;
+    gap: 50px;
+  }
 `
 
 export const SubContainer = styled.div`
-display: flex;
-gap: 25px;
-align-items: center;
+  display: flex;
+  gap: 25px;
+  align-items: center;
 `
 
 export const ImagePerfil = styled.img`
-width: 70px;
-height: 70px;
+  width: 70px;
+  height: 70px;
 `
 export const DadosPerfil = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `
 
 export const DadosPerfilTitulo = styled.h3`
-font-size: 24px;
-color: #76BB4C;
+  font-size: 24px;
+  color: #76BB4C;
 `
 
 export const SubContainerEditarBtn = styled.div`
-align-self: flex-start;
+  align-self: flex-start;
+  @media screen and (max-width: 575px) {
+      align-self: flex-end;
+      width: 80%;
+  }
 `
 
 export const EditarBtn = styled(Button)`
-background: #76BB4C;
-border-radius: 30px;
-padding: 0 20px;
-border: none;
-transition: .3s;
-&:hover {
+  background: #76BB4C;
+  border-radius: 30px;
+  padding: 0 20px;
+  border: none;
+  transition: .3s;
+  &:hover {
     background-color: #4CAF50;
+  }
+  @media screen and (max-width: 575px) {
+    width: 80%;
   }
 `

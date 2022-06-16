@@ -7,12 +7,12 @@ function Header(){
     let userName = 'Usuário';
     return(
         <S.Header>
-            <div>
+            <Link to='/feed'>
                 <img src={logo} alt="logo"/>
-            </div>
+            </Link>
             <S.HeaderMenu>
-                <S.HeaderGreetings>Olá,{userName} | </S.HeaderGreetings>
-                <S.HeaderSignOut href="#">sair</S.HeaderSignOut>
+                <S.HeaderGreetings>Olá, <S.HeaderGreetingsLink to='/profile/:id'>{userName}</S.HeaderGreetingsLink> | </S.HeaderGreetings>
+                <S.HeaderSignOut to='/'>sair</S.HeaderSignOut>
             </S.HeaderMenu>
         </S.Header>
     )
