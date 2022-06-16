@@ -48,6 +48,14 @@ export const getPosts = async () => {
   }
 }
 
+export const getUserPost = async (id) => {
+  try {
+    return await baseUrl.get("/userposts/"+id)
+  } catch (error) {
+      alert("Error:"+ error.response.data)
+  }
+}
+
 export const getUser = async (id) => {
   try {
     return await baseUrl.get("/users/"+id)

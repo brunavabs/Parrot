@@ -5,8 +5,9 @@ import { useParams } from 'react-router-dom';
 import { getUser } from '../../services/auth';
 
 function UserInfo(){
+    const userLocalStorage = localStorage.getItem('user');
     const { id } = useParams();
-    // const urlBd = `localhost:4000/users/${id}`;
+    const idLocalStorage = JSON.parse(userLocalStorage).id;
     const [user, setUser] = useState([]);
     useEffect(() => {
         const loadUser = async () => {
@@ -20,7 +21,10 @@ function UserInfo(){
         loadUser();
     }, [setUser])
     
-    
+    function verificaId(id){
+        if(id === idLocalStorage) return true;
+    }
+
     return(
         <S.Container>
             <S.SubContainer>
@@ -32,9 +36,7 @@ function UserInfo(){
                 </S.DadosPerfil>
             </S.SubContainer>
             <S.SubContainerEditarBtn>
-                <S.EditarBtn>
-                    editar
-                </S.EditarBtn>
+                {verificaId ? <S.EditarBtn>editar</S.EditarBtn> : null}
             </S.SubContainerEditarBtn>
         </S.Container>
     )
