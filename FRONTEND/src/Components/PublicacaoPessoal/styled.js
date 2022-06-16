@@ -8,7 +8,7 @@ export const Container = styled.div`
   font-family: 'Questrial', sans-serif;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   box-sizing: border-box;
   border-bottom: 1px solid #C5C5C5;
   max-width: 700px;

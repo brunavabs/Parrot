@@ -34,6 +34,7 @@ function Publicacao(){
                             <S.DataPublicacao>{post.createdAt}</S.DataPublicacao>
                             <p>{post.content}</p>
                         </S.DadosPerfil>
+                        
                 </S.Container>
             
             )
