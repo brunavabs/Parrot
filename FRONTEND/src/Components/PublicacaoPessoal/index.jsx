@@ -23,11 +23,12 @@ function PublicacaoPessoal(){
     
     return (
         posts.map((post) => {
+            let formattedName = post.User.name.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
             return(
                 <S.Container>
                         <S.ImagePerfil src={fotoPerfil} alt="Foto do perfil"/>
                         <S.DadosPerfil>
-                            <S.NomeEndereco>{post.User.name} - {post.User.apartament}</S.NomeEndereco>
+                            <S.NomeEndereco>{formattedName} - {post.User.apartament}</S.NomeEndereco>
                             <S.DataPublicacao>{post.createdAt}</S.DataPublicacao>
                             <p>{post.content}</p>
                         </S.DadosPerfil>

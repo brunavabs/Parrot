@@ -5,17 +5,19 @@ import { Form, Button } from "react-bootstrap"
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { cadastroUsuario } from '../../services/auth';
+import { useNavigate } from 'react-router-dom';
 
 const validationSchema = Yup.object({
     name: Yup.string().required("Valor é requerido"),
-    email: Yup.string().email("E-mail não valido").required("Valor é requerido"),
-    password: Yup.string().min(6, "Senha fraca. Digite uma senha com mais caracteres").required("Valor é requerido"),
+    email: Yup.string().email("E-mail não válido").required("Valor é requerido"),
+    password: Yup.string().min(6, "Mínimo 6 caracteres").required("Valor é requerido"),
     //passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Digite a mesma senha').required("Valor é requerido"),
     apartament: Yup.string().required("Valor é requerido"),
     //linkImage: Yup.string()
 });
 
 function Cadastro(){
+    const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -29,6 +31,7 @@ function Cadastro(){
                 const { name, email, password, apartament } = values;
                 await cadastroUsuario(name, email, password, apartament);
                 alert('Usuário cadastrado com sucesso!');
+                navigate("/")
             } catch(error) {
                 alert(`Erro ao cadastrar usuário: ${error}`);
             }
@@ -49,7 +52,7 @@ function Cadastro(){
                             value={formik.values.name}
                             onChange={formik.handleChange}>
                         </S.FormInput>
-                        {formik.errors.name && <span>{formik.errors.name}</span>}
+                        {formik.errors.name && <S.SpanFormik>{formik.errors.name}</S.SpanFormik>}
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <S.FormInput
@@ -59,7 +62,7 @@ function Cadastro(){
                             value={formik.values.email}
                             onChange={formik.handleChange}>
                         </S.FormInput>
-                        {formik.errors.email && <span>{formik.errors.email}</span>}
+                        {formik.errors.email && <S.SpanFormik>{formik.errors.email}</S.SpanFormik>}
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <S.FormInput
@@ -70,7 +73,7 @@ function Cadastro(){
                             onChange={formik.handleChange}
                             >
                         </S.FormInput>
-                        {formik.errors.password && <span>{formik.errors.password}</span>}
+                        {formik.errors.password && <S.SpanFormik>{formik.errors.password}</S.SpanFormik>}
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <S.FormInput
@@ -87,7 +90,7 @@ function Cadastro(){
                             value={formik.values.apartament}
                             onChange={formik.handleChange}>
                         </S.FormInput>
-                        {formik.errors.apartament && <span>{formik.errors.apartament}</span>}
+                        {formik.errors.apartament && <S.SpanFormik>{formik.errors.apartament}</S.SpanFormik>}
                     </Form.Group>
                     <Form.Group className="mb-5">
                         <S.FormInput

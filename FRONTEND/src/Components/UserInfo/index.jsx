@@ -22,9 +22,8 @@ function UserInfo(){
     }, [setUser])
     
     function verificaId(id){
-        if(id == idLocalStorage) return true;
+        if(id === idLocalStorage) return true;
     }
-
     return(
         <S.Container>
             <S.SubContainer>

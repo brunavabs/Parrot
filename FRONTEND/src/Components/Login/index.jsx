@@ -11,8 +11,8 @@ import { signIn } from '../../store/users';
 import jwt_decode from 'jwt-decode';
 
 const validationSchema = Yup.object({
-    email: Yup.string().email("E-mail não valido").required("Valor é requerido"),
-    password: Yup.string().min(6, "Senha fraca. Digite uma senha com mais caracteres").required("Valor é requerido"),
+    email: Yup.string().email("E-mail não válido").required("Valor é requerido"),
+    password: Yup.string().required("Valor é requerido"),
 });
 
 function Login(){
@@ -52,7 +52,7 @@ function Login(){
                             value={formik.values.email}
                             onChange={formik.handleChange}>
                         </S.FormInput>
-                        {formik.errors.email && <span>{formik.errors.email}</span>}
+                        {formik.errors.email && <S.SpanFormik>{formik.errors.email}</S.SpanFormik>}
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <S.FormInput
@@ -62,7 +62,7 @@ function Login(){
                             value={formik.values.password}
                             onChange={formik.handleChange}>
                         </S.FormInput>
-                        {formik.errors.password && <span>{formik.errors.password}</span>}
+                        {formik.errors.password && <S.SpanFormik>{formik.errors.password}</S.SpanFormik>}
                     </Form.Group>
                     <S.LoginBtn type="submit" className='mb-4'>
                         entrar

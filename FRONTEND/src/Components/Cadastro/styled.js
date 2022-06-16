@@ -56,6 +56,11 @@ export const FormInput = styled.input`
   }
 `	
 
+export const SpanFormik = styled.span`
+  display: block;
+  color: red;
+`
+
 export const LoginBtn = styled(Button)`
   width: 300px;
   border: none;
