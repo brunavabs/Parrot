@@ -11,7 +11,6 @@ function Publicacao(){
             try {
                 const response = await getPosts();
                 setPosts(response.data);
-                console.log(response.data);
             } catch(error) {
                 alert(`Erro ao carregar posts: ${error}`);
             }

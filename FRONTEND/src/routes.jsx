@@ -16,7 +16,7 @@ const AppRoutes = () => {
                 <Route path="/" element={<Login />} />
                 <Route path="/signup" element={<Cadastro />} />
                 {user.payload.usersSlice.isLogged ? <Route path="/feed" element={<Feed/>}/> : <Route path="/" element={<Navigate to="/"/>} />}
-                {user.payload.usersSlice.isLogged ? <Route path="/profile" element={<Profile/>}/> : <Route path="/" element={<Login />} />}
+                {user.payload.usersSlice.isLogged ? <Route path="/profile/:id" element={<Profile/>}/> : <Route path="/" element={<Login />} />}
             </Routes>
         </BrowserRouter>
     );

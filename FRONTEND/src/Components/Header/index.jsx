@@ -5,15 +5,17 @@ import { Link } from 'react-router-dom';
 
 
 function Header(){
-    let userName = localStorage.getItem('user');
-    let name = JSON.parse(userName).name;
+    let user = localStorage.getItem('user');
+    let id = JSON.parse(user).id; 
+    let name = JSON.parse(user).name;
+    let path = `/profile/${id}`;
     return(
         <S.Header>
             <Link to='/feed'>
                 <img src={logo} alt="logo"/>
             </Link>
             <S.HeaderMenu>
-                <S.HeaderGreetings>Olá, <S.HeaderGreetingsLink to='/profile'>{name}</S.HeaderGreetingsLink> | </S.HeaderGreetings>
+                <S.HeaderGreetings>Olá, <S.HeaderGreetingsLink to={path}>{name}</S.HeaderGreetingsLink> | </S.HeaderGreetings>
                 <S.HeaderSignOut to='/'>sair</S.HeaderSignOut>
             </S.HeaderMenu>
         </S.Header>

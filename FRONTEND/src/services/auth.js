@@ -14,13 +14,13 @@ export const cadastroUsuario = async (name, email, password, apartament) => {
   }
 }
 
-// export const listarUsuarios = async () => {
-//   try {
-//       return await baseUrl.get("/users:id")
-//   } catch (error) {
-//       alert("Error:"+ error.response.data)
-//   }
-// }
+export const listarUsuarios = async () => {
+  try {
+      return await baseUrl.get("/users:id")
+  } catch (error) {
+      alert("Error:"+ error.response.data)
+  }
+}
 
 export const loginUsuario = async (email, password) => {
   try {
@@ -43,6 +43,14 @@ export const publicarPost = async (content) => {
 export const getPosts = async () => {
   try {
     return await baseUrl.get("/posts")
+  } catch (error) {
+      alert("Error:"+ error.response.data)
+  }
+}
+
+export const getUser = async (id) => {
+  try {
+    return await baseUrl.get("/users/"+id)
   } catch (error) {
       alert("Error:"+ error.response.data)
   }
