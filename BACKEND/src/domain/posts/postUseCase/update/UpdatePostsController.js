@@ -10,7 +10,10 @@ export default class UpdatePostsController {
             return res.status(400).json("Post não existe para esse ID");
          }
 
-         const match = await UpdatePostsUseCase.matchPostUser(post.id, tokenId);
+         const match = await UpdatePostsUseCase.matchPostUser(
+            post.userID,
+            tokenId
+         );
          if (!match) {
             return res
                .status(401)
