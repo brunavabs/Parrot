@@ -22,7 +22,7 @@ function UserInfo(){
     }, [setUser])
     
     function verificaId(id){
-        if(id === idLocalStorage) return true;
+        if(id == idLocalStorage) return true;
     }
 
     return(
@@ -36,7 +36,7 @@ function UserInfo(){
                 </S.DadosPerfil>
             </S.SubContainer>
             <S.SubContainerEditarBtn>
-                {verificaId ? <S.EditarBtn>editar</S.EditarBtn> : null}
+                {verificaId() ? <S.EditarBtn>editar</S.EditarBtn> : null}
             </S.SubContainerEditarBtn>
         </S.Container>
     )

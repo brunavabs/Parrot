@@ -1,16 +1,18 @@
 import React from 'react';
 import fotoPerfil from '../../assets/imagens/Captura de Tela 2022-06-06 às 20.31 1.png'
 import * as S from './styled';
-import { baseUrl, getPosts,  } from '../../services/auth';
+import { getUserPost } from '../../services/auth';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 
-function Publicacao(){
+function PublicacaoPessoal(){
+    const { id } = useParams();
     const [posts, setPosts] = useState([]);
+
     useEffect(() => {
         const loadPosts = async () => {
             try {
-                const response = await getPosts();
+                const response = await getUserPost(id);
                 setPosts(response.data);
             } catch(error) {
                 alert(`Erro ao carregar posts: ${error}`);
@@ -18,26 +20,22 @@ function Publicacao(){
         };
         loadPosts();
     }, [setPosts])
-
     
-
     return (
         posts.map((post) => {
-            const path = `/profile/${post.User.id}`
             return(
                 <S.Container>
-                        <Link to={path}><S.ImagePerfil src={fotoPerfil} alt="Foto do perfil"/></Link>
+                        <S.ImagePerfil src={fotoPerfil} alt="Foto do perfil"/>
                         <S.DadosPerfil>
                             <S.NomeEndereco>{post.User.name} - {post.User.apartament}</S.NomeEndereco>
                             <S.DataPublicacao>{post.createdAt}</S.DataPublicacao>
                             <p>{post.content}</p>
                         </S.DadosPerfil>
                 </S.Container>
-            
             )
             }  
         )
     )
 }
 
-export default Publicacao;
+export default PublicacaoPessoal;
