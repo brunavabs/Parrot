@@ -27,7 +27,7 @@ function Cadastro(){
         onSubmit: async values => {
             try {
                 const { name, email, password, apartament } = values;
-                await cadastroUsuario(values.name, values.email, values.password, values.apartament);
+                await cadastroUsuario(name, email, password, apartament);
                 alert('Usuário cadastrado com sucesso!');
                 console.log(values)
             } catch(error) {
@@ -37,7 +37,7 @@ function Cadastro(){
         }
     })
     return(
-        <S.Body>
+        <S.Main>
             <S.Container>
                 <S.Logo src={logo} className='mb-3'/>
                 <span className='mb-3'>CADASTRO</span>
@@ -102,7 +102,7 @@ function Cadastro(){
                     </S.LoginBtn>
                 </Form>
             </S.Container>
-        </S.Body>
+        </S.Main>
     )
 }
 

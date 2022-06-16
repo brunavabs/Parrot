@@ -3,7 +3,7 @@ import background from '../../assets/Imagens/background.png'
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export const Body = styled.body`
+export const Main = styled.main`
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 margin: 0;
 padding: 0;

@@ -8,7 +8,7 @@ function Publicar(){
     return(
         <S.Container>
                 <S.ImagePerfil src={fotoPerfil} alt="Foto do perfil"/>
-                <S.FormPublicar onSubmit="">
+                <S.FormPublicar onSubmit={() => {}}>
                     <Form.Group>
                         <S.TextArea as="textarea" rows={3}/>
                     </Form.Group>

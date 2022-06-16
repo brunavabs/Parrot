@@ -6,14 +6,14 @@ import EmptyComponent from '../../Components/EmptyFeed';
 
 const Profile = () => {
   return (
-    <div>
+    <>
       <HeaderComponent />
       <UserComponent />
       <ContainerComponent>
         <EmptyComponent/>
         <PublicacaoComponent/>
       </ContainerComponent>
-    </div>
+    </>
   );
 }
 

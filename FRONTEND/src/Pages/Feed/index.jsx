@@ -5,13 +5,13 @@ import PublicacaoComponent from '../../Components/Publicacao';
 
 const Feed = () => {
   return (
-    <div>
+    <>
       <HeaderComponent />
       <PublicarComponent />
       <ContainerComponent>
         <PublicacaoComponent/>
       </ContainerComponent>
-    </div>
+    </>
   );
 }
 
