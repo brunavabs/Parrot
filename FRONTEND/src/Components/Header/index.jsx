@@ -3,8 +3,12 @@ import logo from '../../assets/imagens/parrot-logo2.png'
 import * as S from './styled';
 import { Link } from 'react-router-dom';
 
+import { useSelector } from "react-redux"
+import { signIn } from '../../store/users';
+
 function Header(){
-    let userName = 'Usuário';
+    const user = useSelector(signIn)
+    let userName = user.payload.usersSlice.name;
     return(
         <S.Header>
             <Link to='/feed'>

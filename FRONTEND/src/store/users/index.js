@@ -6,6 +6,7 @@ const initialState = {
     isLogged: false,
     accessToken: "",
     permission: 'Nothing',
+    apartament: ""
 }
 
 const usersSlice = createSlice({
@@ -15,6 +16,7 @@ const usersSlice = createSlice({
         signIn(state, action){
             Object.assign(state, {
                 name: action.payload.name,
+                apartament: action.payload.apartament,
                 isLogged: true,
                 accessToken: action.payload.accessToken,
                 permission: action.payload.permission
@@ -28,8 +30,6 @@ const usersSlice = createSlice({
 })
 
 export const { signIn, signOut } = usersSlice.actions
-// export const selectUser = (state) => state.isLogged
-// console.log(selectUser)
 
 export default usersSlice.reducer;
 
