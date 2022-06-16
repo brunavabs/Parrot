@@ -3,6 +3,7 @@ import { CreateUserController } from "../domain/users/userCase/create/CreateUser
 import { FindAllUserController } from "../domain/users/userCase/findAll/FindAllUserController.js";
 import { FindOneUserController } from "../domain/users/userCase/findOne/FindOneUserController.js";
 import { UpdateUserController} from "../domain/users/userCase/update/UpdateUserController.js"
+import { DestroyUserController } from "../domain/users/userCase/destroy/DestroyUserController.js";
 import UserValidation from "../domain/users/usersValidation/index.js";
 import auth from "../shared/middleware/auth.js"
 
@@ -14,4 +15,6 @@ routes.get("/users", FindAllUserController.listarAll);
 routes.get("/users/:id", FindOneUserController.listarOne);
 
 routes.put("/users/:id", auth, UserValidation.update, UpdateUserController.updateUser);
+
+routes.delete("/users/:id", auth, UserValidation.destroy, DestroyUserController.destroyUser);
 export default routes;
