@@ -1,24 +1,24 @@
-import User from "../../../models/Users.js";
+import { Users } from "../../../models/index.js";
 import { hashPassword } from "../../../../shared/utils/password/password.js";
 
 export class CreateUserUseCase {
-  static async registroUser(data) {
-    const { name, email, apartament, password } = data;
-    const count = await User.count({ where: { email } });
+   static async registroUser(data) {
+      const { name, email, apartament, password } = data;
+      const count = await Users.count({ where: { email } });
 
-    if (count) {
-      return false;
-    }
+      if (count) {
+         return false;
+      }
 
-    const newPassword = hashPassword(password);
+      const newPassword = hashPassword(password);
 
-    const novoUser = await User.create({
-      name,
-      email,
-      apartament,
-      password: newPassword,
-    });
+      const novoUser = await Users.create({
+         name,
+         email,
+         apartament,
+         password: newPassword,
+      });
 
-    return novoUser;
-  }
+      return novoUser;
+   }
 }
