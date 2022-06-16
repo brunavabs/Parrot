@@ -15,11 +15,18 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 45px 100px 45px 30px;
   gap: 25px;
+  @media screen and (max-width: 685px) {
+    padding: 35px 15px;
+  }
 `
 
 export const ImagePerfil = styled.img`
-width: 70px;
-height: 70px;
+  width: 70px;
+  height: 70px;
+  @media screen and (max-width: 575px) {
+    width: 55px;
+    height: 55px;
+  }
 `
 export const DadosPerfil = styled.div`
 display: flex;
