@@ -9,7 +9,6 @@ export class AuthUseCase {
          const { email, password } = data;
 
          const user = await User.findOne({ where: { email } });
-
          if (!user) {
             return "Email não cadastrado!";
          }
@@ -23,7 +22,7 @@ export class AuthUseCase {
                id: user.id,
                name: user.name,
                email: user.email,
-               userType: (user.flag = 0 ? "user" : "adm"),
+               userType: (user.flag == 0 ? "user" : "adm"),
             },
             secret.key
          );
