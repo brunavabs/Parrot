@@ -1,4 +1,4 @@
-import { FindOneUserUseCase } from "./findOneUserUseCase.js";
+import { FindOneUserUseCase } from "./FindOneUserUseCase.js";
 
 export class FindOneUserController {
   static async listarOne(req, res) {

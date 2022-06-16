@@ -1,16 +1,14 @@
 import { validate, Joi } from "express-validation";
 
 export default validate({
-   headers: Joi.object({
-      token: Joi.string().required()
-   }),
+  
    params: Joi.object({
-      id: Joi.string().required()
+      id: Joi.number().required()
    }),
    body: Joi.object({
       name: Joi.string().required(),
       email: Joi.string().required(),
-      apartament: Joi.string().required(),
+      apartament: Joi.number().required(),
       password: Joi.string().required()
    })
 })

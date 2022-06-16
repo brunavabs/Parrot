@@ -1,7 +1,7 @@
 import express from "express";
 import userRoutes from "./usersRoutes.js";
 import postsRoutes from "./postsRoutes.js";
-import { AuthController } from "../domain/auth/authUseCase/authContoller.js";
+import {AuthController} from "../domain/auth/authUseCase/AuthController.js";
 import loginValidation from "../domain/auth/authValidation/index.js";
 
 const routes = express.Router();
