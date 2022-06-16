@@ -29,14 +29,15 @@ function Login(){
           const { email, password } = values;
           const accessToken = await loginUsuario(email, password);
           const decoded = jwt_decode(accessToken);
-          console.log(decoded)
+          localStorage.setItem('token', accessToken);  
+          localStorage.setItem('user', JSON.stringify(decoded));
+          console.log(accessToken)
           dispatch(signIn({name: decoded.name, apartament: decoded.apartament, accessToken, permission: decoded.userType, isLogged: true}));
           //@ts-ignore
           baseUrl.defaults.headers["Authorization"] = `Bearer ${accessToken}`
           navigate("/feed")
         }
       });
-      console.log(formik.handleSubmit);
     return(
         <S.Main>
             <S.Container>

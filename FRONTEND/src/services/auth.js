@@ -18,7 +18,24 @@ export const loginUsuario = async (email, password) => {
   try {
       const response = await baseUrl.post("/login", { email, password })
       return response.data;
-      console.log(response.data);
+  } catch (error) {
+      alert("Error:"+ error.response.data)
+  }
+}
+
+export const publicarPost = async (content) => {
+  try {
+      const response = await baseUrl.post("/posts", { content })
+      return response.data;
+  } catch (error){
+      alert("Error:"+ error.response.data)
+  }
+}
+
+export const getPosts = async () => {
+  try {
+    const response = await baseUrl.get("/posts")
+    return response.data;
   } catch (error) {
       alert("Error:"+ error.response.data)
   }
