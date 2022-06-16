@@ -25,6 +25,7 @@ export const EmptyText = styled.span`
 font-size: 22px;
 color: #909090;
 margin-top: 110px;
+text-align: center;
 @media screen and (max-width: 450px) {
     font-size: 18px;
   }
