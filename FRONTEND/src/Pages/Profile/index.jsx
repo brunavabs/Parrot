@@ -22,16 +22,19 @@ const Profile = () => {
         loadUser();
     }, [setIdParam])
     
-    function verificaLenght(){
-        if(idParam.length === 0) return true;
+    console.log(idParam)
+
+    const verificaLenght = () => {
+      if( idParam.lenght === 0 )
+      return true
     }
-    console.log(idParam);
+
   return (
     <>
       <HeaderComponent />
       <UserComponent />
       <ContainerComponent>
-        {verificaLenght ? <EmptyComponent/> : <PublicacaoComponent/>}
+        {verificaLenght() ? <EmptyComponent/> : <PublicacaoComponent/>}
       </ContainerComponent>
     </>
   );
