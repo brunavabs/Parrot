@@ -32,4 +32,4 @@ const Posts = db.define(
    }
 );
 
-export default Posts
+export default Posts;

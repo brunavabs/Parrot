@@ -28,6 +28,9 @@ const Users = db.define(
       updatedAt: {
          type: DataTypes.DATE,
       },
+      flag: {
+         type: DataTypes.INTEGER,
+      },
    },
    {
       tableName: "users",
