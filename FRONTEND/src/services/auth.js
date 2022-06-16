@@ -14,6 +14,14 @@ export const cadastroUsuario = async (name, email, password, apartament) => {
   }
 }
 
+// export const listarUsuarios = async () => {
+//   try {
+//       return await baseUrl.get("/users:id")
+//   } catch (error) {
+//       alert("Error:"+ error.response.data)
+//   }
+// }
+
 export const loginUsuario = async (email, password) => {
   try {
       const response = await baseUrl.post("/login", { email, password })
@@ -34,8 +42,7 @@ export const publicarPost = async (content) => {
 
 export const getPosts = async () => {
   try {
-    const response = await baseUrl.get("/posts")
-    return response.data;
+    return await baseUrl.get("/posts")
   } catch (error) {
       alert("Error:"+ error.response.data)
   }
