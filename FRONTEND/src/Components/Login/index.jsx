@@ -29,8 +29,8 @@ function Login(){
           const { email, password } = values;
           const accessToken = await loginUsuario(email, password);
           const decoded = jwt_decode(accessToken);
-        //   console.log(decoded);
-          dispatch(signIn({name: decoded.name , accessToken, permission: decoded.userType, isLogged: true}));
+          console.log(decoded)
+          dispatch(signIn({name: decoded.name, apartament: decoded.apartament, accessToken, permission: decoded.userType, isLogged: true}));
           //@ts-ignore
           baseUrl.defaults.headers["Authorization"] = `Bearer ${accessToken}`
           navigate("/feed")
