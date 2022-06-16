@@ -11,7 +11,7 @@ function Header(){
                 <img src={logo} alt="logo"/>
             </Link>
             <S.HeaderMenu>
-                <S.HeaderGreetings>Olá, <S.HeaderGreetingsLink to='/profile/:id'>{userName}</S.HeaderGreetingsLink> | </S.HeaderGreetings>
+                <S.HeaderGreetings>Olá, <S.HeaderGreetingsLink to='/profile'>{userName}</S.HeaderGreetingsLink> | </S.HeaderGreetings>
                 <S.HeaderSignOut to='/'>sair</S.HeaderSignOut>
             </S.HeaderMenu>
         </S.Header>
