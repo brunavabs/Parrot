@@ -29,7 +29,6 @@ function Cadastro(){
                 const { name, email, password, apartament } = values;
                 await cadastroUsuario(name, email, password, apartament);
                 alert('Usuário cadastrado com sucesso!');
-                console.log(values)
             } catch(error) {
                 alert(`Erro ao cadastrar usuário: ${error}`);
             }
