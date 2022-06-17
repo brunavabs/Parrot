@@ -1,4 +1,4 @@
-import { createPostUseCase } from "../useCase/index.js";
+import { createPostUseCase } from "../../useCase/index.js";
 
 export class CreatePostController {
    async createPost(req, res) {

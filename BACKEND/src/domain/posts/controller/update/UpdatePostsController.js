@@ -1,4 +1,4 @@
-import { updatePostsUseCase } from "../useCase/index.js";
+import { updatePostsUseCase } from "../../useCase/index.js";
 
 export class UpdatePostsController {
    async updatePost(req, res) {

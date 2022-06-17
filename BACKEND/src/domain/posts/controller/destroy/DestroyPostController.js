@@ -1,4 +1,4 @@
-import { destroyPostUseCase } from "../useCase/index.js";
+import { destroyPostUseCase } from "../../useCase/index.js";
 
 export class DestroyPostController {
    async destroyPost(req, res) {

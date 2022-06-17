@@ -1,4 +1,4 @@
-import { findOnePostUseCase } from "../useCase/index.js";
+import { findOnePostUseCase } from "../../useCase/index.js";
 
 export class FindOnePostController {
    async getOne(req, res) {

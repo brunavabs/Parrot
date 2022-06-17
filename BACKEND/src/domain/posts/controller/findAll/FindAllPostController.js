@@ -1,4 +1,4 @@
-import { findAllPostUseCase } from "../useCase/index.js";
+import { findAllPostUseCase } from "../../useCase/index.js";
 
 export class FindAllPostController {
    async getAll(req, res) {

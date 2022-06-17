@@ -1,8 +1,8 @@
-import { FindAllPostController } from "./FindAllPostController.js";
-import { FindOnePostController } from "./FindOnePostController.js";
-import { CreatePostController } from "./CreatePostController.js";
-import { UpdatePostsController } from "./UpdatePostsController.js";
-import { DestroyPostController } from "./DestroyPostController.js";
+import { FindAllPostController } from "./findAll/FindAllPostController.js";
+import { FindOnePostController } from "./findOne/FindOnePostController.js";
+import { CreatePostController } from "./create/CreatePostController.js";
+import { UpdatePostsController } from "./update/UpdatePostsController.js";
+import { DestroyPostController } from "./destroy/DestroyPostController.js";
 
 export const findAllPostController = new FindAllPostController();
 export const findOnePostController = new FindOnePostController();
