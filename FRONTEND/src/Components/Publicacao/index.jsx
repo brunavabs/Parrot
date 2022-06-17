@@ -27,7 +27,7 @@ function Publicacao(){
             let formattedName = post.User.name.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
             let formattedDate = moment(post.createdAt).tz('America/Sao_Paulo').format('DD/MM/YYYY HH:mm');
             return(
-                <S.Container>
+                <S.Container key={post.id}>
                         <Link to={path}><S.ImagePerfil src={fotoPerfil} alt="Foto do perfil"/></Link>
                         <S.DadosPerfil>
                             <S.NomeEndereco>{formattedName} - apê {post.User.apartament}</S.NomeEndereco>
