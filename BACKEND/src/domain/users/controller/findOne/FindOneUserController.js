@@ -4,8 +4,9 @@ export class FindOneUserController {
    constructor() {}
 
    async listarOne(req, res) {
-      try {
-         const listarOne = await findOneUserUseCase.listarOne(req);
+      try { 
+         const id = req.params.id
+         const listarOne = await findOneUserUseCase.listarOne(id);
          if (!listarOne) {
             res.json(400).json("Não existe usuário para esse ID");
          }

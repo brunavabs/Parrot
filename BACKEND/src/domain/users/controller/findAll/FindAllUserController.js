@@ -1,4 +1,4 @@
-import { findAllUserUseCase } from "../useCase/index.js";
+import { findAllUserUseCase } from "../../useCase/index.js";
 
 export class FindAllUserController {
    constructor() {}

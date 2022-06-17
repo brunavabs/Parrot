@@ -1,4 +1,4 @@
-import { createUserUseCase } from "../useCase/index.js";
+import { createUserUseCase } from "../../useCase/index.js";
 
 export class CreateUserController {
    constructor() {}

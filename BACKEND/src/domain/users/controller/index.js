@@ -1,8 +1,8 @@
-import { FindAllUserController } from "./FindAllUserController.js";
-import { FindOneUserController } from "./FindOneUserController.js";
-import { CreateUserController } from "./CreateUserController.js";
-import { UpdateUserController } from "./UpdateUserController.js";
-import { DestroyUserController } from "./DestroyUserController.js";
+import { FindAllUserController } from "./findAll/FindAllUserController.js";
+import { FindOneUserController } from "./findOne/FindOneUserController.js";
+import { CreateUserController } from "./create/CreateUserController.js";
+import { UpdateUserController } from "./update/UpdateUserController.js";
+import { DestroyUserController } from "./destroy/DestroyUserController.js";
 
 export const findAllUserController = new FindAllUserController();
 export const findOneUserController = new FindOneUserController();

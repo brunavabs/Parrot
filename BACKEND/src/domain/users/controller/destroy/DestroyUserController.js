@@ -1,21 +1,21 @@
-import { updateUserUseCase } from "../useCase/index.js";
+import { destroyUserUseCase } from "../../useCase/index.js";
 
-export class UpdateUserController {
+export class DestroyUserController {
    constructor() {}
 
-   async updateUser(req, res) {
+   async destroyUser(req, res) {
       try {
          const id = req.params.id;
          const authid = req.auth.id;
-         const existeUser = await updateUserUseCase.existeUser(id);
+         const existeUser = await destroyUserUseCase.existeUser(id);
          if (!existeUser) {
             return res.status(400).json("Usúario não existe! Tente outro!");
          }
-         if (!updateUserUseCase.matchUser(id, authid)) {
+         if (!destroyUserUseCase.matchUser(id, authid)) {
             return res.status(401).json("Você não devia estar aqui, bonitinho");
          }
-         const updateUser = await updateUserUseCase.updateUser(id, req.body);
-         return res.status(200).json(updateUser);
+         await destroyUserUseCase.destroyUser(id);
+         return res.sendStatus(204);
       } catch (error) {
          res.status(500).send({
             message: `Deu erro! Chame o Homem de Ferro - ${error.message}`,
