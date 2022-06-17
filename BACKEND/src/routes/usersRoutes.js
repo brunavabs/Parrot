@@ -1,20 +1,32 @@
 import express from "express";
-import { CreateUserController } from "../domain/users/userCase/create/CreateUserController.js";
-import { FindAllUserController } from "../domain/users/userCase/findAll/FindAllUserController.js";
-import { FindOneUserController } from "../domain/users/userCase/findOne/FindOneUserController.js";
-import { UpdateUserController} from "../domain/users/userCase/update/UpdateUserController.js"
-import { DestroyUserController } from "../domain/users/userCase/destroy/DestroyUserController.js";
-import UserValidation from "../domain/users/usersValidation/index.js";
-import auth from "../shared/middleware/auth.js"
+import {
+   createUserController,
+   destroyUserController,
+   findAllUserController,
+   findOneUserController,
+   updateUserController,
+} from "../domain/users/controller/index.js";
+import userValidation from "../domain/users/usersValidation/index.js";
+import auth from "../shared/middleware/auth.js";
 
 const routes = express.Router();
 
-routes.post("/users", UserValidation.create, CreateUserController.createUser);
+routes.post("/users", userValidation.create, createUserController.createUser);
 
-routes.get("/users", FindAllUserController.listarAll);
-routes.get("/users/:id", FindOneUserController.listarOne);
+routes.get("/users", findAllUserController.listarAll);
+routes.get("/users/:id", findOneUserController.listarOne);
 
-routes.put("/users/:id", auth, UserValidation.update, UpdateUserController.updateUser);
+routes.put(
+   "/users/:id",
+   auth,
+   userValidation.update,
+   updateUserController.updateUser
+);
 
-routes.delete("/users/:id", auth, UserValidation.destroy, DestroyUserController.destroyUser);
+routes.delete(
+   "/users/:id",
+   auth,
+   userValidation.destroy,
+   destroyUserController.destroyUser
+);
 export default routes;
