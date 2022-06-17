@@ -1,7 +1,9 @@
-import { Posts, Users } from "../../../models/index.js";
+import { Posts, Users } from "../../models/index.js";
 
-export default class FindAllPostUseCase {
-   static async getAllPosts() {
+export class FindAllPostUseCase {
+   constructor() {}
+
+   async getAllPosts() {
       const posts = await Posts.findAll({
          include: [
             {
