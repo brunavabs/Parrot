@@ -63,3 +63,12 @@ export const getUser = async (id) => {
       alert("Error:"+ error.response.data)
   }
 }
+
+export const updateUser = async (id, name, email, password, apartament) => {
+  try {
+      const response = await baseUrl.put("/users/"+id, { name, email, password, apartament })
+      return response.data;
+  } catch (error) {
+      alert("Error:"+ error.response.data)
+  }
+}

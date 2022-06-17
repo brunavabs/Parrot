@@ -51,13 +51,18 @@ export const SubContainerEditarBtn = styled.div`
   }
 `
 
-export const EditarBtn = styled(Button)`
+export const EditarBtn = styled(Link)`
+  display: block;
   background: #76BB4C;
   border-radius: 30px;
   padding: 0 20px;
   border: none;
   transition: .3s;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
   &:hover {
+    color: #fff;
     background-color: #4CAF50;
   }
   @media screen and (max-width: 575px) {

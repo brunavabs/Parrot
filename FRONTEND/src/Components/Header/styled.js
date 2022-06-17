@@ -40,10 +40,14 @@ export const HeaderGreetingsLink = styled(Link)`
 ` 
 
 export const HeaderSignOut = styled(Button)`
+  background: none;
+  border: none;
   color: #6033AA;
   text-decoration: none;
   font-size: 16px;
+  padding: 0;
   &:hover {
+    background: none;
     text-decoration: underline;
     color: #6033AA;
   }
