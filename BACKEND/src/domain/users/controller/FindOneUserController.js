@@ -1,9 +1,11 @@
-import { FindOneUserUseCase } from "./FindOneUserUseCase.js";
+import { findOneUserUseCase } from "../useCase/index.js";
 
 export class FindOneUserController {
-  static async listarOne(req, res) {
+  constructor() {}
+
+  async listarOne(req, res) {
     try {
-      const listarOne = await FindOneUserUseCase.listarOne(req);
+      const listarOne = await findOneUserUseCase.listarOne(req);
       res.status(200).json(listarOne);
     } catch (error) {
       console.log(error);
