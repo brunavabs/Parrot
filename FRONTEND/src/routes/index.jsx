@@ -4,22 +4,17 @@ import Cadastro from "../Pages/Cadastro";
 import Feed from '../Pages/Feed';
 import Profile from "../Pages/Profile";
 
-import { useSelector } from "react-redux"
-import { signIn } from '../store/users';
-
 import RequireAuth from "./RequiredAuth";
 
 const AppRoutes = () => {
-    const user = useSelector(signIn)
+
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/signup" element={<Cadastro />} />
-                <Route path="/feed" element={<RequireAuth><Feed/></RequireAuth>}/>
-                <Route path="/profile/:id" element={<Profile/>}/>
-                {/* {user.payload.usersSlice.isLogged ? <Route path="/feed" element={<Feed/>}/> : <Route path="/" element={<Navigate to="/"/>} />}
-                {user.payload.usersSlice.isLogged ? <Route path="/profile/:id" element={<Profile/>}/> : <Route path="/" element={<Login />} />} */}
+                <Route path="/feed" element={<RequireAuth><Feed /></RequireAuth>}/>
+                <Route path="/profile/:id" element={<RequireAuth><Profile/></RequireAuth>}/>
             </Routes>
         </BrowserRouter>
     );
