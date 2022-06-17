@@ -3,12 +3,15 @@ import fotoPerfil from '../../assets/imagens/Captura de Tela 2022-06-06 às 20.
 import * as S from './styled';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../../services/auth';
+import { useSelector } from 'react-redux';
 
-function UserInfo(){
-    const userLocalStorage = localStorage.getItem('user');
+function UserInfo(){    
+    const userIdRedux = useSelector((state) => state.id)
+    
     const { id } = useParams();
-    const idLocalStorage = JSON.parse(userLocalStorage).id;
-    const [user, setUser] = useState([]);
+
+    const [user, setUser] = useState(null);
+
     useEffect(() => {
         const loadUser = async () => {
             try {
@@ -21,22 +24,24 @@ function UserInfo(){
         loadUser();
     }, [setUser])
     
-    function verificaId(id){
-        if(id === idLocalStorage) return true;
+    function verificaId(){
+        return id == userIdRedux
     }
+    
+    const verificacao = verificaId()
     
     return(
         <S.Container>
             <S.SubContainer>
                 <S.ImagePerfil src={fotoPerfil} alt="Foto do perfil"/>
                 <S.DadosPerfil>
-                    <S.DadosPerfilTitulo>{user.name}</S.DadosPerfilTitulo>
-                    <span>apê {user.apartament}</span>
-                    <span>{user.email}</span>
+                    <S.DadosPerfilTitulo>{user?.name}</S.DadosPerfilTitulo>
+                    <span>apê {user?.apartament}</span>
+                    <span>{user?.email}</span>
                 </S.DadosPerfil>
             </S.SubContainer>
             <S.SubContainerEditarBtn>
-                {verificaId() ? <S.EditarBtn>editar</S.EditarBtn> : null}
+                { verificacao ? <S.EditarBtn>editar</S.EditarBtn> : null}
             </S.SubContainerEditarBtn>
         </S.Container>
     )

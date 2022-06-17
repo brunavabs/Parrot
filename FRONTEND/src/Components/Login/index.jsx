@@ -31,8 +31,7 @@ function Login(){
           const decoded = jwt_decode(accessToken);
           localStorage.setItem('token', accessToken);  
           localStorage.setItem('user', JSON.stringify(decoded));
-          console.log(accessToken)
-          dispatch(signIn({name: decoded.name, apartament: decoded.apartament, accessToken, permission: decoded.userType, isLogged: true}));
+          dispatch(signIn({id: decoded.id, name: decoded.name, apartament: decoded.apartament, accessToken, permission: decoded.userType, isLogged: true}));
           //@ts-ignore
           baseUrl.defaults.headers["Authorization"] = `Bearer ${accessToken}`
           navigate("/feed")

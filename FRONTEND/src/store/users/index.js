@@ -5,7 +5,8 @@ const initialState = {
     isLogged: false,
     accessToken: "",
     permission: 'Nothing',
-    apartament: ""
+    apartament: "",
+    id: ""
 }
 
 const usersSlice = createSlice({
@@ -14,6 +15,7 @@ const usersSlice = createSlice({
     reducers:{
         signIn(state, action){
             Object.assign(state, {
+                id: action.payload.id,
                 name: action.payload.name,
                 apartament: action.payload.apartament,
                 isLogged: true,

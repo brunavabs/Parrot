@@ -23,7 +23,7 @@ const Profile = () => {
     }, [setIdParam])
 
     const verificaLenght = () => {
-      if( idParam.lenght === 0 )
+      if( idParam.length === 0 )
       return true
     }
 

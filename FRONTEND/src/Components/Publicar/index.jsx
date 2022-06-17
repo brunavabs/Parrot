@@ -5,35 +5,35 @@ import { Link } from 'react-router-dom';
 import { Form } from 'react-bootstrap'
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { baseUrl, publicarPost } from '../../services/auth';
+import { baseUrl, publicarPost, getPosts } from '../../services/auth';
 
 const validationSchema = Yup.object({
     content: Yup.string().required("Insira algo para publicar"),
 });
 
-function Publicar(){
+function Publicar({ setPosts }){
     const formik = useFormik({
         initialValues: {
             content: ''
         },
-        validationSchema,
-        onSubmit: async values => {
+        validationSchema, 
+        onSubmit: async (values, { resetForm }) => {
             try {
                 const { content } = values;
                 const accessToken = localStorage.getItem('token');
                 baseUrl.defaults.headers["Authorization"] = `Bearer ${accessToken}`
-                await publicarPost(content);
-                alert('Post publicado com sucesso!');
+                
+                const x = await publicarPost(content);
+                resetForm()
+                const response = await getPosts();
+                setPosts(response.data);
+
             } catch(error) {
                 alert(`Erro ao cadastrar usuário: ${error}`);
             }
             
         }
     })
-
-    // const userLocalStorage = localStorage.getItem('user')
-    // const idLocalStorage = JSON.parse(userLocalStorage).id
-    // const path = `/profile/${idLocalStorage}`
 
     return(
         <S.Container>
