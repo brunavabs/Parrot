@@ -1,7 +1,9 @@
-import { Posts } from "../../../models/index.js";
+import { Posts } from "../../models/index.js";
 
-export default class CreatePostUseCase {
-   static async registerPost(data) {
+export class CreatePostUseCase {
+   constructor() {}
+   
+   async registerPost(data) {
       try {
          const userID = data.auth.id;
          const { content } = data.body;

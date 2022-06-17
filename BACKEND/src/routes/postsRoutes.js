@@ -1,37 +1,34 @@
 import express from "express";
 import auth from "../shared/middleware/auth.js";
 import postValidation from "../domain/posts/postValidation/index.js";
-import CreatePostController from "../domain/posts/postUseCase/create/CreatePostController.js";
-import FindAllPostController from "../domain/posts/postUseCase/findAll/FindAllPostController.js";
-import FindOnePostController from "../domain/posts/postUseCase/findOne/FindOnePostController.js";
-import DestroyPostController from "../domain/posts/postUseCase/destroy/DestroyPostController.js";
-import UpdatePostsController from "../domain/posts/postUseCase/update/UpdatePostsController.js";
+import {createPostController, destroyPostController, findAllPostController, findOnePostController, updatePostsController} from "../domain/posts/controller/index.js"
+
 
 const routes = express.Router();
 
-routes.get("/posts", FindAllPostController.getAll);
+routes.get("/posts", findAllPostController.getAll);
 
-routes.get("/posts/:id", postValidation.getOne, FindOnePostController.getOne);
+routes.get("/posts/:id", postValidation.getOne, findOnePostController.getOne);
 
 routes.post(
    "/posts",
    auth,
    postValidation.create,
-   CreatePostController.createPost
+   createPostController.createPost
 );
 
 routes.put(
    "/posts/:id",
    auth,
    postValidation.update,
-   UpdatePostsController.updatePost
+   updatePostsController.updatePost
 );
 
 routes.delete(
    "/posts/:id",
    auth,
    postValidation.destroy,
-   DestroyPostController.destroyPost
+   destroyPostController.destroyPost
 );
 
 export default routes;

@@ -1,7 +1,9 @@
-import { Posts, Users } from "../../../models/index.js";
+import { Posts, Users } from "../../models/index.js";
 
-export default class FindOnePostUseCase {
-   static async getOnePost(data) {
+export class FindOnePostUseCase {
+   constructor() {}
+
+   async getOnePost(data) {
       const posts = await Posts.findOne({
          where: { id: data.params.id },
          include: [
