@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 function Publicacao(){
     const [posts, setPosts] = useState([]);
-    
     useEffect(() => {
         const loadPosts = async () => {
             try {
@@ -20,8 +19,6 @@ function Publicacao(){
         loadPosts();
     }, [setPosts])
     
-    
-
     return (
         posts.map((post) => {
             const path = `/profile/${post.User.id}`
@@ -39,7 +36,7 @@ function Publicacao(){
             
             )
             }  
-        )
+        ).reverse()
     )
 }
 

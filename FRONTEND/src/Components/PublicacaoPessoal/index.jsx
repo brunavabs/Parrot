@@ -35,7 +35,7 @@ function PublicacaoPessoal(){
                 </S.Container>
             )
             }  
-        )
+        ).reverse()
     )
 }
 
