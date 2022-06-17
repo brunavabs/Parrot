@@ -8,6 +8,7 @@ import { baseUrl, updateUser } from '../../services/auth';
 import { useNavigate } from 'react-router-dom';
 import UserInfo from '../UserInfo';
 import { useParams, Link } from 'react-router-dom';
+import { toast } from 'react-toastify'
 
 const validationSchema = Yup.object({
     name: Yup.string().required("Valor é requerido"),
@@ -36,10 +37,10 @@ function Editar(){
             try {
                 const { id, name, email, password, apartament } = values;
                 await updateUser(id, name, email, password, apartament);
-                alert('Usuário atualizado com sucesso!');
+                toast.success('Usuário atualizado com sucesso!');
                 deslogar()
             } catch(error) {
-                alert(`Erro ao atualizar usuário: ${error}`);
+                toast.warn('Erro ao atualizar o usuário!')
             }
             
         }

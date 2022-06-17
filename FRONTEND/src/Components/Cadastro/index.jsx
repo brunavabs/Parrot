@@ -32,7 +32,6 @@ function Cadastro(){
                 toast.success('Usuário cadastrado com sucesso!');
                 navigate("/")
             } catch(error) {
-                alert(`Erro ao cadastrar usuário: ${error}`);
                 toast.warn('Erro ao cadastrar o usuário!')
             }
             

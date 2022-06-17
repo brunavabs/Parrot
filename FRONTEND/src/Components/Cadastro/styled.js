@@ -13,6 +13,7 @@ background-image: url('${background}');
 background-size: cover;
 background-position: center;
 display: flex;
+flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 font-family: 'Questrial', sans-serif;

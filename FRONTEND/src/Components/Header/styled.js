@@ -14,7 +14,6 @@ export const Header = styled.header`
   box-sizing: border-box;
   padding: 15px 50px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
-
   @media(max-width: 600px) {
     justify-content: center;
   }

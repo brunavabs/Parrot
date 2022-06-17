@@ -6,6 +6,7 @@ import EmptyComponent from '../../Components/EmptyFeed';
 import { getUserPost } from '../../services/auth';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify'
 
 const Profile = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const Profile = () => {
                 const response = await getUserPost(id);
                 setIdParam(response.data);
             } catch(error) {
-                alert(`Erro: ${error}`);
+                toast.warn(`Erro: ${error}`);
             }
         };
         loadUser();

@@ -4,6 +4,7 @@ import * as S from './styled';
 import { useParams } from 'react-router-dom';
 import { getUser, updateUser } from '../../services/auth';
 import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify'
 
 function UserInfo(){    
     const userIdRedux = useSelector((state) => state.id)
@@ -18,7 +19,7 @@ function UserInfo(){
                 const response = await getUser(id);
                 setUser(response.data);
             } catch(error) {
-                alert(`Erro: ${error}`);
+                toast.warn(`Erro: ${error}`);
             }
         };
         loadUser();
