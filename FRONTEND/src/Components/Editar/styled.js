@@ -8,7 +8,7 @@ export const Main = styled.main`
 margin: 0;
 padding: 0;
 height: 100vh;
-width: 100vw;
+width: 100%;
 background-image: url('${background}');
 background-size: cover;
 background-position: center;
