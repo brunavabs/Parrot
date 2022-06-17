@@ -5,9 +5,9 @@ import {
    findAllUserController,
    findOneUserController,
    updateUserController,
-} from "../domain/users/controller/index.js";
-import userValidation from "../domain/users/usersValidation/index.js";
-import auth from "../shared/middleware/auth.js";
+} from "../../domain/users/controller/index.js";
+import userValidation from "../../domain/users/usersValidation/index.js";
+import auth from "../middleware/auth.js";
 
 const routes = express.Router();
 
