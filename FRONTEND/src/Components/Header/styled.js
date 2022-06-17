@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap'
 
 export const Header = styled.header`
   @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
@@ -38,7 +39,7 @@ export const HeaderGreetingsLink = styled(Link)`
   }
 ` 
 
-export const HeaderSignOut = styled(Link)`
+export const HeaderSignOut = styled(Button)`
   color: #6033AA;
   text-decoration: none;
   font-size: 16px;

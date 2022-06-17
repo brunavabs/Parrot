@@ -2,13 +2,12 @@ import React from 'react';
 import fotoPerfil from '../../assets/imagens/Captura de Tela 2022-06-06 às 20.31 1.png'
 import * as S from './styled';
 import { baseUrl, getPosts,  } from '../../services/auth';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import moment from 'moment';
-import * as tz from 'moment-timezone';
 
-function Publicacao(){
-    const [posts, setPosts] = useState([]);
+function Publicacao({posts, setPosts}){
+
     useEffect(() => {
         const loadPosts = async () => {
             try {

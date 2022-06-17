@@ -3,13 +3,16 @@ import PublicarComponent from '../../Components/Publicar';
 import ContainerComponent from '../../Components/ContainerPublicacao';
 import PublicacaoComponent from '../../Components/Publicacao';
 
+import { useState } from 'react'
+
 const Feed = () => {
+  const [posts, setPosts] = useState([]);
     return (
       <>
         <HeaderComponent />
-        <PublicarComponent />
+        <PublicarComponent setPosts={setPosts} />
         <ContainerComponent>
-          <PublicacaoComponent/>
+          <PublicacaoComponent posts={posts} setPosts={setPosts}/>
         </ContainerComponent>
       </>
     );
