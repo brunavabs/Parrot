@@ -14,7 +14,6 @@ export const Header = styled.header`
   box-sizing: border-box;
   padding: 15px 50px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
-
   @media(max-width: 600px) {
     justify-content: center;
   }
@@ -40,10 +39,14 @@ export const HeaderGreetingsLink = styled(Link)`
 ` 
 
 export const HeaderSignOut = styled(Button)`
+  background: none;
+  border: none;
   color: #6033AA;
   text-decoration: none;
   font-size: 16px;
+  padding: 0;
   &:hover {
+    background: none;
     text-decoration: underline;
     color: #6033AA;
   }

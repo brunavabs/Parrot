@@ -4,8 +4,10 @@ import * as S from './styled';
 import { Form, Button } from "react-bootstrap"
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { cadastroUsuario } from '../../services/auth';
-import { useNavigate, Link } from 'react-router-dom';
+import { baseUrl, updateUser } from '../../services/auth';
+import { useNavigate } from 'react-router-dom';
+import UserInfo from '../UserInfo';
+import { useParams, Link } from 'react-router-dom';
 import { toast } from 'react-toastify'
 
 const validationSchema = Yup.object({
@@ -15,10 +17,16 @@ const validationSchema = Yup.object({
     apartament: Yup.string().required("Valor é requerido"),
 });
 
-function Cadastro(){
+function Editar(){
+    function deslogar(){
+        localStorage.clear();
+        navigate('/')
+    }
+    const { id } = useParams();
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
+            id: id,
             name: '',
             email: '',
             password: '',
@@ -27,12 +35,12 @@ function Cadastro(){
         validationSchema,
         onSubmit: async values => {
             try {
-                const { name, email, password, apartament } = values;
-                await cadastroUsuario(name, email, password, apartament);
-                toast.success('Usuário cadastrado com sucesso!');
-                navigate("/")
+                const { id, name, email, password, apartament } = values;
+                await updateUser(id, name, email, password, apartament);
+                toast.success('Usuário atualizado com sucesso!');
+                deslogar()
             } catch(error) {
-                toast.warn('Erro ao cadastrar o usuário!')
+                toast.warn('Erro ao atualizar o usuário!')
             }
             
         }
@@ -40,8 +48,8 @@ function Cadastro(){
     return(
         <S.Main>
             <S.Container>
-                <Link to="/"><S.Logo src={logo} className='mb-3'/></Link>
-                <span className='mb-3'>CADASTRO</span>
+                <Link to="/feed"><S.Logo src={logo} className='mb-3'/></Link>
+                <span className='mb-3'>EDITAR USUÁRIO</span>
                 <Form onSubmit={formik.handleSubmit}>
                     <Form.Group className="mb-3">
                         <S.FormInput
@@ -99,7 +107,7 @@ function Cadastro(){
                         </S.FormInput>
                     </Form.Group>
                     <S.LoginBtn type="submit">
-                        entrar
+                        editar
                     </S.LoginBtn>
                 </Form>
             </S.Container>
@@ -107,4 +115,4 @@ function Cadastro(){
     )
 }
 
-export default Cadastro;
+export default Editar;

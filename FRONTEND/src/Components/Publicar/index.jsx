@@ -31,7 +31,6 @@ function Publicar({ setPosts }){
                 toast.success('Post feito com sucesso!')
 
             } catch(error) {
-                alert(`Erro ao cadastrar usuário: ${error}`);
                 toast.warn('Erro ao fazer o post')
             }
             

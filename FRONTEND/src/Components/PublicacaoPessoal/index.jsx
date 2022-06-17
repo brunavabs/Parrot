@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import * as tz from 'moment-timezone';
+import { toast } from 'react-toastify'
 
 function PublicacaoPessoal(){
     const { id } = useParams();
@@ -17,7 +18,7 @@ function PublicacaoPessoal(){
                 const response = await getUserPost(id);
                 setPosts(response.data);
             } catch(error) {
-                alert(`Erro ao carregar posts: ${error}`);
+                toast.warn(`Erro ao carregar posts`);
             }
         };
         loadPosts();

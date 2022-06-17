@@ -5,6 +5,7 @@ import { baseUrl, getPosts,  } from '../../services/auth';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import moment from 'moment';
+import { toast } from 'react-toastify'
 
 function Publicacao({posts, setPosts}){
 
@@ -14,7 +15,7 @@ function Publicacao({posts, setPosts}){
                 const response = await getPosts();
                 setPosts(response.data);
             } catch(error) {
-                alert(`Erro ao carregar posts: ${error}`);
+                toast.warn(`Erro ao carregar posts`);
             }
         };
         loadPosts();
