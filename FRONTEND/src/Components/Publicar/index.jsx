@@ -30,6 +30,11 @@ function Publicar(){
             
         }
     })
+
+    // const userLocalStorage = localStorage.getItem('user')
+    // const idLocalStorage = JSON.parse(userLocalStorage).id
+    // const path = `/profile/${idLocalStorage}`
+
     return(
         <S.Container>
                 <S.ImagePerfil src={fotoPerfil} alt="Foto do perfil"/>

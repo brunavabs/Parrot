@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-
 const initialState = {
     name: "",
     isLogged: false,
@@ -22,7 +21,6 @@ const usersSlice = createSlice({
                 permission: action.payload.permission
             })
         },
-        //SignOut
         signOut(state){
             Object.assign(state, initialState)
         }
