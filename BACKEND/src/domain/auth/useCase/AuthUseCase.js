@@ -1,14 +1,14 @@
-import User from "../../models/Users.js";
+import { Users } from "../../models/index.js";
 import { isPasswordMatch } from "../../../shared/utils/password/password.js";
 import jwt from "jsonwebtoken";
 import secret from "../../../config/secret.js";
 
 export class AuthUseCase {
-   static async token(data) {
+   async token(data) {
       try {
          const { email, password } = data;
 
-         const user = await User.findOne({ where: { email } });
+         const user = await Users.findOne({ where: { email } });
          if (!user) {
             return "Email não cadastrado!";
          }
@@ -22,7 +22,7 @@ export class AuthUseCase {
                id: user.id,
                name: user.name,
                email: user.email,
-               userType: (user.flag == 0 ? "user" : "adm"),
+               userType: user.flag == 0 ? "user" : "adm",
             },
             secret.key
          );
