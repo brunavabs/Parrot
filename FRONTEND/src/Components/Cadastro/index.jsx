@@ -6,14 +6,13 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { cadastroUsuario } from '../../services/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'
 
 const validationSchema = Yup.object({
     name: Yup.string().required("Valor é requerido"),
     email: Yup.string().email("E-mail não válido").required("Valor é requerido"),
     password: Yup.string().min(6, "Mínimo 6 caracteres").required("Valor é requerido"),
-    //passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Digite a mesma senha').required("Valor é requerido"),
     apartament: Yup.string().required("Valor é requerido"),
-    //linkImage: Yup.string()
 });
 
 function Cadastro(){
@@ -30,10 +29,11 @@ function Cadastro(){
             try {
                 const { name, email, password, apartament } = values;
                 await cadastroUsuario(name, email, password, apartament);
-                alert('Usuário cadastrado com sucesso!');
+                toast.success('Usuário cadastrado com sucesso!');
                 navigate("/")
             } catch(error) {
                 alert(`Erro ao cadastrar usuário: ${error}`);
+                toast.warn('Erro ao cadastrar o usuário!')
             }
             
         }
