@@ -4,6 +4,8 @@ import * as S from './styled';
 import { getUserPost } from '../../services/auth';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import moment from 'moment';
+import * as tz from 'moment-timezone';
 
 function PublicacaoPessoal(){
     const { id } = useParams();
@@ -24,12 +26,13 @@ function PublicacaoPessoal(){
     return (
         posts.map((post) => {
             let formattedName = post.User.name.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+            let formattedDate = moment(post.createdAt).tz('America/Sao_Paulo').format('DD/MM/YYYY HH:mm');
             return(
                 <S.Container>
                         <S.ImagePerfil src={fotoPerfil} alt="Foto do perfil"/>
                         <S.DadosPerfil>
                             <S.NomeEndereco>{formattedName} - {post.User.apartament}</S.NomeEndereco>
-                            <S.DataPublicacao>{post.createdAt}</S.DataPublicacao>
+                            <S.DataPublicacao>{formattedDate}</S.DataPublicacao>
                             <p>{post.content}</p>
                         </S.DadosPerfil>
                 </S.Container>

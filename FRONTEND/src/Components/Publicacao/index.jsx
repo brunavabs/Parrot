@@ -4,6 +4,8 @@ import * as S from './styled';
 import { baseUrl, getPosts,  } from '../../services/auth';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
+import moment from 'moment';
+import * as tz from 'moment-timezone';
 
 function Publicacao(){
     const [posts, setPosts] = useState([]);
@@ -23,12 +25,13 @@ function Publicacao(){
         posts.map((post) => {
             const path = `/profile/${post.User.id}`
             let formattedName = post.User.name.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+            let formattedDate = moment(post.createdAt).tz('America/Sao_Paulo').format('DD/MM/YYYY HH:mm');
             return(
                 <S.Container>
                         <Link to={path}><S.ImagePerfil src={fotoPerfil} alt="Foto do perfil"/></Link>
                         <S.DadosPerfil>
                             <S.NomeEndereco>{formattedName} - apê {post.User.apartament}</S.NomeEndereco>
-                            <S.DataPublicacao>{post.createdAt}</S.DataPublicacao>
+                            <S.DataPublicacao>{formattedDate}</S.DataPublicacao>
                             <p>{post.content}</p>
                         </S.DadosPerfil>
                         
