@@ -6,6 +6,7 @@ import { Form } from 'react-bootstrap'
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { baseUrl, publicarPost, getPosts } from '../../services/auth';
+import { toast } from 'react-toastify'
 
 const validationSchema = Yup.object({
     content: Yup.string().required("Insira algo para publicar"),
@@ -27,9 +28,11 @@ function Publicar({ setPosts }){
                 resetForm()
                 const response = await getPosts();
                 setPosts(response.data);
+                toast.success('Post feito com sucesso!')
 
             } catch(error) {
                 alert(`Erro ao cadastrar usuário: ${error}`);
+                toast.warn('Erro ao fazer o post')
             }
             
         }

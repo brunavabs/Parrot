@@ -1,8 +1,13 @@
 import express from "express";
-import auth from "../shared/middleware/auth.js";
-import postValidation from "../domain/posts/postValidation/index.js";
-import {createPostController, destroyPostController, findAllPostController, findOnePostController, updatePostsController} from "../domain/posts/controller/index.js"
-
+import auth from "../../shared/middleware/auth.js";
+import postValidation from "../../domain/posts/postValidation/index.js";
+import {
+   createPostController,
+   destroyPostController,
+   findAllPostController,
+   findOnePostController,
+   updatePostsController,
+} from "../../domain/posts/controller/index.js";
 
 const routes = express.Router();
 

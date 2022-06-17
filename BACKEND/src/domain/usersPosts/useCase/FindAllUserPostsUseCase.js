@@ -1,9 +1,11 @@
 import { Posts, Users } from "../../models/index.js";
 
 export class FindAllUserPostsUseCase {
-   static async findAllUsersPosts(userID) {
+   constructor() {}
+
+   async findAllUsersPosts(userID) {
       const userPosts = await Posts.findAll({
-         where: { userID},
+         where: { userID },
          include: [
             {
                model: Users,
