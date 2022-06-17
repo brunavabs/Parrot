@@ -4,6 +4,8 @@ import jwt from "jsonwebtoken";
 import secret from "../../../config/secret.js";
 
 export class AuthUseCase {
+   constructor() {}
+
    async token(data) {
       try {
          const { email, password } = data;

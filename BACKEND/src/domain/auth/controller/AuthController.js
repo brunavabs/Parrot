@@ -1,6 +1,8 @@
 import { authUseCase } from "../useCase/index.js";
 
 export class AuthController {
+   constructor() {}
+   
    async login(req, res) {
       try {
          const token = await authUseCase.token(req.body);
