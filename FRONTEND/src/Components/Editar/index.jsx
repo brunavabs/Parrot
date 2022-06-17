@@ -7,15 +7,13 @@ import { useFormik } from 'formik';
 import { baseUrl, updateUser } from '../../services/auth';
 import { useNavigate } from 'react-router-dom';
 import UserInfo from '../UserInfo';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const validationSchema = Yup.object({
     name: Yup.string().required("Valor é requerido"),
     email: Yup.string().email("E-mail não válido").required("Valor é requerido"),
     password: Yup.string().min(6, "Mínimo 6 caracteres").required("Valor é requerido"),
-    //passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Digite a mesma senha').required("Valor é requerido"),
     apartament: Yup.string().required("Valor é requerido"),
-    //linkImage: Yup.string()
 });
 
 function Editar(){
@@ -49,7 +47,7 @@ function Editar(){
     return(
         <S.Main>
             <S.Container>
-                <S.Logo src={logo} className='mb-3'/>
+                <Link to="/feed"><S.Logo src={logo} className='mb-3'/></Link>
                 <span className='mb-3'>EDITAR USUÁRIO</span>
                 <Form onSubmit={formik.handleSubmit}>
                     <Form.Group className="mb-3">

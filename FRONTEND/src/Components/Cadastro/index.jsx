@@ -5,7 +5,7 @@ import { Form, Button } from "react-bootstrap"
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { cadastroUsuario } from '../../services/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify'
 
 const validationSchema = Yup.object({
@@ -41,7 +41,7 @@ function Cadastro(){
     return(
         <S.Main>
             <S.Container>
-                <S.Logo src={logo} className='mb-3'/>
+                <Link to="/"><S.Logo src={logo} className='mb-3'/></Link>
                 <span className='mb-3'>CADASTRO</span>
                 <Form onSubmit={formik.handleSubmit}>
                     <Form.Group className="mb-3">
