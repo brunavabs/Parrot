@@ -1,4 +1,4 @@
-import db from "../../infra/database/index.js";
+import db from "../../shared/infra/database/index.js";
 import { DataTypes } from "sequelize";
 
 const Users = db.define(
